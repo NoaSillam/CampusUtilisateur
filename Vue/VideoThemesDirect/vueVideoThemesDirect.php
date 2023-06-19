@@ -132,7 +132,7 @@ if($direct['crono'] <= "00:00:00")
 <br> 
 
 <div class="col-8 m-3 directVideo " style="width: 100%;">
-        <div class="card border-0 shadow" >   
+        <div class="card border-0 shadow" style="margin-top: 10px;">   
     
 <div class="video-gauche">
 <div class="video-responsive">
@@ -141,8 +141,7 @@ frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pict
 
 </div>
 </div>
-<br>
-<div class="card-footer d-flex justify-content-center align-items-center" style="margin-top: -0.3%;">
+<div class="card-footer d-flex justify-content-center align-items-center" style="margin-top: -1%;">
   <div class="btnLien">
     <a href="<?= "index.php?action=videoId&idDocVideo=".$direct['idDocVideo'] ?>" target="_blank" class="btn btn-primary btnDelta"  
     onmouseover="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='black';"
