@@ -893,6 +893,7 @@ sousRessourcess.addEventListener('click', function(e) {
 
 
 
+
 //  // Sélectionner l'élément de clic
 //  const sousRessources = document.querySelector('.sous-ressources');
 
