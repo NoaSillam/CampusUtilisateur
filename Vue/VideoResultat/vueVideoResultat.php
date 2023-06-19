@@ -67,7 +67,10 @@ foreach($docVideoRecherche as $docvidResultat):
       <h5 class="card-title"><?= $docvidResultat['libelle'] ?></h5>
       </div>
       <div class="card-footer">
-      <a href="<?= "index.php?action=videoId&idDocVideo=".$docvidResultat['idDocVideo']?>" class="btn btn-primary">Voir la video</a>
+      <a href="<?= "index.php?action=videoId&idDocVideo=".$docvidResultat['idDocVideo']?>" class="btn btn-primary btnDelta"  
+    onmouseover="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='black';"
+      onmouseout="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='white';"
+      style=" background-color: rgb(92,188,202); border-color: rgb(92,188,202); display: inline-block; text-align:center; z-index: 1;">Voir la video</a>
       </div>
     </div>
     </div>
@@ -87,7 +90,10 @@ foreach($docVideoRecherche as $docvidResultat):
       <h5 class="card-title"><?= $docvidResultat['libelle'] ?></h5>
       </div>
       <div class="card-footer">
-      <a href="<?= "index.php?action=videoId&idDocVideo=".$docvidResultat['idDocVideo']?>" class="btn btn-primary">Voir la video</a>
+      <a href="<?= "index.php?action=videoId&idDocVideo=".$docvidResultat['idDocVideo']?>" class="btn btn-primary btnDelta"  
+    onmouseover="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='black';"
+      onmouseout="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='white';"
+      style=" background-color: rgb(92,188,202); border-color: rgb(92,188,202); display: inline-block; text-align:center; z-index: 1;">Voir la video</a>
       </div>
     </div>
     </div>
@@ -99,3 +105,7 @@ endforeach;
 ?>
 </div>
 </div>
+<br>
+<br>
+<?php 
+include('footer.php'); ?>

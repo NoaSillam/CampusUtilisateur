@@ -127,7 +127,9 @@ include_once('header2.php');
     </div>
 </br>
     <div class="form-group">
-      <input class="btn btn-primary mlu" type="submit" value="Valider">
+      <input class="btn btn-primary mlu" type="submit" onmouseover="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='white';"
+                style=" background-color: rgb(92,188,202); border-color: rgb(92,188,202); display: inline-block; z-index: 1;" value="Valider" value="Valider">
     </div>
 
 
