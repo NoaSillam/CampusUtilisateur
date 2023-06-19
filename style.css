@@ -205,31 +205,72 @@ body
 
 }
 
+
+/* 
 .navbar {
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, #ff69b4, #87CEFA);
+  background: linear-gradient(to right, #b72a70, #87CEFA);
   height: 60px;
-}
-/* CSS for navbar logo */
-.navbar img {
+  padding: 0 20px;
+  }
+  
+  @media (max-width: 767px) {
+  .navbar {
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
+  padding: 20px;
+  }
+  .navbar img {
+  margin: 0 0 10px 0;
+  }
+  .navbar a {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  }
+  .navbar-collapse {
+  display: none;
+  }
+  .navbar-toggle {
+  display: block;
+  cursor: pointer;
+  margin: 10px 0;
+  }
+  }
+  
+  @media (max-width: 575px) {
+  .navbar a {
+  font-size: 16px;
+  }
+  }
+  
+  .navbar img {
   height: 40px;
-  margin-left: 20px;
-}
-/* CSS for navbar links */
-.navbar a {
+  margin-right: 20px;
+  }
+  
+  .navbar a {
   color: white;
   text-decoration: none;
   margin-right: 20px;
   font-size: 20px;
-}
-/* CSS for dropdown menu */
-.dropdown {
+  }
+  
+  .navbar-collapse {
+  display: flex;
+  }
+  
+  .navbar-toggle {
+  display: none;
+  }
+  
+  .dropdown {
   position: relative;
   display: inline-block;
-}
-/* CSS for dropdown content */
-.dropdown-content {
+  }
+  
+  .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -237,22 +278,39 @@ body
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   text-align: center;
   z-index: 1;
-}
-/* CSS for dropdown links */
-.dropdown-content a {
+  }
+  
+  .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-}
-/* CSS for dropdown links on hover */
-.dropdown-content a:hover {
+  }
+  
+  .dropdown-content a:hover {
   background-color: #f1f1f1;
-}
-/* CSS to show dropdown on hover */
-.dropdown:hover .dropdown-content {
+  }
+  
+  .dropdown:hover .dropdown-content {
   display: block;
-}
+  } */
+
+/* @media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+  .navbar img {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  .navbar a {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+} */
+
 /*
 .header {
 position: absolute;
@@ -410,8 +468,7 @@ top: 196px; */
     border: 1px solid #999;
     width: 60%;
   }
-  h2,
-  p {
+  h2 {
     margin: 0 0 20px;
     font-weight: 400;
     color: #999;

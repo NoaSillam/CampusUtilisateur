@@ -25,9 +25,9 @@ class ControleurInscrit
         $vue = new Vue("InscritBenevole");
         $vue->generer(array('benevoles'=>$benevoles));
     }
-    public function listeBenevoleMission()
+    public function listeBenevoleMission($idMission)
     {
-        $benevoles = $this->inscrit->getInscritBenevolesMission();
+        $benevoles = $this->inscrit->getInscritBenevolesMission($idMission);
         $vue = new Vue("InscritBenevoleMission");
         $vue->generer(array('benevoles'=>$benevoles));
     }
@@ -44,27 +44,33 @@ class ControleurInscrit
         $vue = new Vue("InscritPreventions");
         $vue->generer(array('preventions'=>$preventions));
     }
-    public function ajoutDonateur($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $montant, $anneeNaissance, $civilite)
+    public function ajoutDonateur( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $montant, $anneeNaissance, $civilite)
     {
-       $this->inscrit->ajouterInscritDonateur($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $montant, $anneeNaissance, $civilite);
+       $this->inscrit->ajouterInscritDonateur( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $montant, $anneeNaissance, $civilite);
         // $vue = new Vue("InscritDonateurAjouter");
         // $vue->generer(array('ajout'=>$ajout));
     }
-    public function ajoutBenevole($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $anneeNaissance, $civilite)
+    public function ajoutBenevole( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite)
     {
-       $this->inscrit->ajouterInscritBenevole($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $anneeNaissance, $civilite);
+       $this->inscrit->ajouterInscritBenevole( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite);
         // $vue = new Vue("InscritDonateurAjouter");
         // $vue->generer(array('ajout'=>$ajout));
     }
-    public function ajoutBenevoleMission($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite, $commentaire, $idMission)
+    // public function ajoutBenevole( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $anneeNaissance, $civilite)
+    // {
+    //    $this->inscrit->ajouterInscritBenevole( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $anneeNaissance, $civilite);
+    //     // $vue = new Vue("InscritDonateurAjouter");
+    //     // $vue->generer(array('ajout'=>$ajout));
+    // }
+    public function ajoutBenevoleMission( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite, $commentaire, $idMission)
     {
-       $this->inscrit->ajouterInscritBenevoleMission($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite, $commentaire, $idMission);
+       $this->inscrit->ajouterInscritBenevoleMission( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite, $commentaire, $idMission);
         // $vue = new Vue("InscritDonateurAjouter");
         // $vue->generer(array('ajout'=>$ajout));
     }
-    public function ajoutNewsletters($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal,  $anneeNaissance, $civilite)
+    public function ajoutNewsletters( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite)
     {
-       $this->inscrit->ajouterInscritNewsletter($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $anneeNaissance, $civilite);
+       $this->inscrit->ajouterInscritNewsletter( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite);
         // $vue = new Vue("InscritDonateurAjouter");
         // $vue->generer(array('ajout'=>$ajout));
     }

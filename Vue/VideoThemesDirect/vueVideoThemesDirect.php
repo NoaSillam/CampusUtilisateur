@@ -1,226 +1,201 @@
 <style>
-    [aria-disabled="true"] {
-  opacity: 0.5;
-  pointer-events: none;
-}
-.video-responsive { 
-overflow:hidden; 
-padding-bottom:56.25%; 
-position:relative; 
-height:0;
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
 }
 
 .video-responsive iframe {
-left:0; 
-top:0; 
-height:50%;
-width:40%;
-position:absolute;
+  width: 58%;
+  height: 338px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 4%;
 }
-.vid
-{
- 
-  margin-top: -25%;
-  height:50%;
-width:40%;
+
+[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
 }
-.bouton
-{
-  margin-top: -5%;
-  margin-left: -78%;
-  width: 20%;
-}
-.titreVideo
-{
-  margin-top: -30%;
-  margin-left: -3%;
+
+.vid {
   width: 40%;
 }
-.direct{
-  margin-left: -85%;
+
+.direct {
+  text-align: center;
+
+  margin-top: -5%;
 }
+
+.btnLien1 {
+  margin-top: -26.3%;
+  margin-left: -33%;
+  position: relative;
+}
+
+.vid1 {
+  text-align: center;
+  margin-left: -35%;
+  margin-top: 32%;
+}
+
+.vidTitre {
+
+  color: black;
+}
+
+.ytp-large-play-button {
+  display: none !important;
+}
+
+.titreVideo {
+  text-align: center;
+  margin-left: -35%;
+}
+
+.btnDelta {
+  background-color: rgb(92, 188, 202);
+  border-color: rgb(92, 188, 202);
+}
+
+.btnDelta:hover {
+  background-color: rgb(92, 188, 202);
+  border-color: rgb(92, 188, 202);
+  color: black;
+}
+
+@media screen and (max-width: 1000px) {
+  .vid1 {
+    margin-top: 350px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .vid1 {
+    margin-top: 10px;
+  }
+}
+
+/* .directImg {
+  margin-top: -10%;
+} */
+.card {
+  border: none; /* Supprime les bordures de la carte */
+}
+
+h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    max-width: 70%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+
 </style>
 
 
-
-<h1 class="direct">Le direct</h1>
-
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+<br>
+<div class="total">
+<h1 class="direct" style="margin-top: -1%; font-size: 40px;"> Le direct</h1>
+<div class="row row-cols-12 g-4 w-100" style="width: 100%;" >
 <?php
-    foreach($directs as $direct):
-        ?>
-         <?php
-    if($direct['crono'] <= "00:00:00")
+foreach($directs as $direct):
+?>
+ <?php
+if($direct['crono'] <= "00:00:00")
 
-    {?>
-   
-<!--     
-      <div class="video-responsive">
-      <iframe width="500px" height="320px" src=" <?= $direct['lien']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-      </div>
-
-    <h5 class="titreVideo"> <?= $direct['libelle'] ?> </h5>
-    <a href="<?= "index.php?action=videoId&idDocVideo=".$direct['idDocVideo']?>" class="btn btn-primary bouton">Voir la video</a>
-    -->
-
-
-
-    <div >
-  <div class="video-responsive">
-    <iframe width="500px" height="320px" src=" <?= $direct['lien']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-  </div>
-  <br>
-  <br>
-
-  <div>
-    <h4 class="titreVideo" > <?= $direct['libelle'] ?> </h4>
-    <br>
-    <br>
-    <a href="<?= "index.php?action=videoId&idDocVideo=".$direct['idDocVideo']?>" class="btn btn-primary bouton">Voir la video</a>
-  </div>
+{?>
+<div class="card-body" style="height: 40px; ">
+<br>
+    <div class="vidTitre" >
+        <h4 class="card-title" style="color: black; text-align: center; margin-top: -2.1%; font-size: 30px;"><?=$direct['libelle']?></h4>
+    </div>
 </div>
 
-   
-    <?php }
-    else{
-    ?>
-   
-      <div class="video-responsive">
-      <iframe width="500px" height="320px" src=" <?= $direct['lien']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" aria-disabled="true" allowfullscreen></iframe> 
-      </div>
-<div class="vid">
-    <h5 > <?= $direct['libelle'] ?> </h5>
-    <h6>Il reste <?= $direct['crono']?></h6>
-    <a href="<?= "index.php?action=videoId&idDocVideo=".$direct['idDocVideo']?>" class="btn btn-primary">Voir la description</a>
- 
+<br>
+<br>
+<br> 
+
+<div class="col-8 m-3 directVideo " style="width: 100%;">
+        <div class="card border-0 shadow" >   
+    
+<div class="video-gauche">
+<div class="video-responsive">
+<iframe src="<?= $direct['lien'] ?>" style=" border: 2px solid black; position:relative; margin-left:auto; margin-right:auto; width:650px; height: 340px;" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+
+</div>
+</div>
+<br>
+<div class="card-footer d-flex justify-content-center align-items-center" style="margin-top: -0.3%;">
+  <div class="btnLien">
+    <a href="<?= "index.php?action=videoId&idDocVideo=".$direct['idDocVideo'] ?>" target="_blank" class="btn btn-primary btnDelta"  
+    onmouseover="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='black';"
+      onmouseout="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='white';"
+      style=" background-color: rgb(92,188,202); border-color: rgb(92,188,202); display: inline-block; text-align:center; z-index: 1;">Voir la description</a> 
+  </div>
+</div>
+<?php }
+else{
+?>
+<div class="card-body" style="height: 57px; ">
+<br>
+    <div class="vidTitre" >
+        <h4 class="card-title" style="color: black; text-align: center; margin-top: -3.8%; font-size: 30px;"><?=$direct['libelle']?></h4>
     </div>
+</div>
+<div class="col-12 m-3 directImg " style="margin-left:auto; margin-right:auto; ">
+        <div class="card border-0 shadow">
+        
 
+<img style=" border: 2px solid black; position:relative; margin-left:auto; margin-right:auto; width:650px; height: 340px; object-fit: scale-down;" 
+class="img-fluid" src="<?= $direct['imgApercu'] ?>"   alt="">
+
+<div class="card-body d-flex flex-column">
+<?php
+                       date_default_timezone_set('Europe/Paris');
+                       $dateParution = new DateTime($direct['dateParution']);
+                       $currentDate = new DateTime();
+                       $interval = $currentDate->diff($dateParution);
+                       $days = $interval->format('%a');
+                       $hours = $interval->format('%h');
+                       $minutes = $interval->format('%i');
+                       if ($interval->invert) {
+                           echo "-";
+                           $days = abs($days);
+                       }
+                       ?>
+          <h5 style="margin-top: 1%;">Il reste : <?= $days ?> jours, <?= $hours ?> heures et <?= $minutes ?> minutes avant le début de l'émission</h5>
+</div>
+<div class="card-footer d-flex justify-content-center align-items-center" style="margin-top: -0.9%;">
+  <div class="btnLien" >
+    <a href="<?= "index.php?action=videoId&idDocVideo=".$direct['idDocVideo'] ?>" target="_blank" class="btn btn-primary btnDelta"  
+    onmouseover="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='black';"
+      onmouseout="this.style.backgroundColor='rgb(92,188,202)'; this.style.borderColor='rgb(92,188,202)'; this.style.color='white';"
+      style=" background-color: rgb(92,188,202); border-color: rgb(92,188,202); display: inline-block; text-align:center; z-index: 1;">Voir la description</a> 
+  </div>
+</div>
 <?php 
- }
- ?>
-
-
-
-
-
-
-
-
-    <?php
-
+}
+?>
+<?php
 endforeach
 ?>
-
- <!-- <style>
-
-/*       
-:host {
-  display: block;
-}
-.ratio {
-  background-color:black;
-  position: relative;
-}
-.ratio-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-height: var(--max-height, 100vh);
-}
-video ~ .ratio-svg,
-iframe ~ .ratio-svg {
-  max-height: 100%;
-}
-.poster {
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.poster:hover .play {
-  transform: scale(1.1)
-}
-.poster:hover::before {
-  opacity: .8;
-}
-.title {
-  margin-top: 4px;
-  color: #FFF;
-  font-size: 22px;
-  position: relative;
-  text-align: center;
-  z-index: 3;
-  transition: .3s;
-  line-height: 1.2em;
-}
-.title em {
-  display:block;
-  opacity: 0.7;
-  font-size: 0.8em;
-  font-style: normal;
-}
-.play {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  z-index: 3;
-  fill: #FFF;
-  margin-bottom: 8px;
-  filter:  drop-shadow(0 1px 20px #121C4280);
-  transition: .3s;
-}
-.poster::before {
-  content:'';
-  background: linear-gradient(to top, var(--color) 0%, var(--color-transparent) 100%);
-  z-index: 2;
-}
-.poster,
-iframe,
-video,
-.poster::before,
-img {
-  position: absolute;
-  width: 25%;
-   height: 25%;
-  transition: opacity .5s;
-}
-.poster img {
-  object-fit: cover;
-}
-.poster[aria-hidden] {
-  pointer-events: none;
-  opacity: 0;
-}</style> */-->
-    
-        <!-- <progress-tracker contentId="1365" data-history="1365" duration="1804">
-        <youtube-player
-          video="FWoIR2BrBJo"
-          poster="image/definition-du-numerique.jpeg"
-          button="image/lecture.png"
-          duration="30 min"
-          class="shadow">
-          <div class="ratio">
-            <div class="player"></div>
-            <button class="poster">
-            <img src="image/definition-du-numerique.jpeg" width="500" height="250"/>
-            <svg class="play">
-             <path d="M 23 0 C 10.32 0 0 10.32 0 23 s 10.32 23 23 23 s 23 -10.32 23 -23 S 35.68 0 23 0 Z m 8.55 23.83 l -12 8 A 1 1 0 0 1 18 31 V 15 a 1 1 0 0 1 1.55 -0.83 l 12 8 a 1 1 0 0 1 0 1.66 Z"> </path>  </svg>
-            
-            </button>
-          </div>
-          <a href="  //$direct['lien']" target="_blank" rel="noopener" class="course__placeholder">
-            <span>Voir la vidéo</span>
-            <img src="image/definition-du-numerique.jpeg" width="500" height="250"/>
-          </a>
-        </youtube-player>
-      </progress-tracker>
-      </td> -->
-      
-
-
-
- 
+</div></div></div></div>
 
 

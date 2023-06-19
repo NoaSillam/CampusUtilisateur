@@ -9,18 +9,23 @@ class Theme extends Modele
         $themes = $this->executerRequete($sql);
         return $themes;
     }
+    public function getSousThm($idThemeParent)
+    {
+        $sql = 'SELECT `id`, `libelle`, `descriptif`, `img`, `idThemeParent` from theme where `idThemeParent` = ?';
+        $sousThemes = $this->executerRequete($sql, array($idThemeParent));
+        $resultat = $sousThemes->fetchAll(PDO::FETCH_ASSOC);
+        if (count($resultat) == 0) {
+            $resultat = null;
+        }
+        return $resultat;
+    }
     public function getThm($idTheme)
     {
         $sql = 'select * from theme where idThemeParent is null and id = ?';
         $themes = $this->executerRequete($sql, array($idTheme));
         return $themes;
     }
-    public function getSousThm($idThemeParent)
-    {
-        $sql = 'SELECT `id`, `libelle`, `descriptif`, `img`, `idThemeParent` from theme where `idThemeParent` is not null and `idThemeParent` = ?';
-        $sousThemes = $this->executerRequete($sql, array($idThemeParent));
-        return $sousThemes;
-    }
+  
     public function getSousThms()
     {
         $sql = 'SELECT `id`, `libelle`, `descriptif`, `img`, `idThemeParent` from theme where `idThemeParent` is not null';

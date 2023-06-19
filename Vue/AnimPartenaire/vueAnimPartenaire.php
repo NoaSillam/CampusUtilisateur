@@ -1,4 +1,4 @@
-<?php include_once('header1.php'); ?>
+<?php include_once('header2.php'); ?>
 <br>
 <br>
 <h1>Pres de chez vous</h1>
@@ -7,6 +7,7 @@
        
 </div>
 
+<iframe src="index.php?action=animPartenaireNews"  height="10000" style=" width: 100%;"  title="Iframe Example" scrolling="no" > </iframe>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 

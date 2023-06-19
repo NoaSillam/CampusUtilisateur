@@ -6,7 +6,9 @@
  }
 </style>
 
-
+<?php 
+//include_once('header1.php'); 
+include_once('header2.php');?>
 
 <h2 style="text-align: center;">S'inscrire a notre newsletter action prevention</h2>
 <br>

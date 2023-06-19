@@ -17,69 +17,214 @@ height:100%;
 width:100%;
 position:absolute;
 }
+.pdf{
+  margin-left: 1%;
+  margin-top: -2%;
+  float: left;
+}
 </style>
-
-
-
+<?php 
+//include_once('header1.php'); 
+include_once('header2.php');?>
 <?php
 foreach($docVideoId as $docVideo):
     ?>
-       <?php
-    if($docVideo['crono'] <= "00:00:00")
+     <div style=" width: 80%; margin:auto;">
 
+       <?php
+    if($docVideo['crono'] >= "00:00:00")
     {?>
-    <h3><?= $docVideo['libelle'] ?></h3>
+    <br>
+
     <?php
     if($docVideo['type'] == 'document')
-    {
-        if($docVideo['format']=='pdf')
-  {
-    ?>
-        <td><iframe width="300" height="320" src="image/<?= $docVideo['lien']?> " > </iframe></td>
+    {?>
+    <br>
+
     <?php
-  }
+        if($docVideo['format']=='pdf')
+      {
+       ?>
+
+       <h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+       <br>
+       <br>
+       <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
+  <iframe style="width: 750px; height: 450px;" class="pdf" src="image/<?= $docVideo['lien']?>"></iframe>
+</div>   
+    <!-- <iframe style="text-align:center; justify-item:center; align-item:center; margin-left: 25%;" width="750px" height="450px" class="pdf" src="image/<?= $docVideo['lien']?> " > </iframe> -->
+    <br>
+    <br>
+    <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+    <?php
+   }
   else if ($docVideo['format']=='pptx')
   {
     ?>
-    <td>  <img width="300" height="320" src="image/<?= $docVideo['lien']?> " > </td>
-
+    TEST DOCUEMENT
+   <h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+   <br>
+   <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
+    <img style="width: 750px; height: 450px;" class="pdf" src="image/<?= $docVideo['lien']?>" >
+    </div>
+    <br>
+    <br>
+    <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
     <?php
   }
-  else{
+  else  if($docVideo['format']=='png'){
     ?>
-    <td><img class="img-fluid" src="image/<?= $docVideo['lien']?>" ></td>
-    <?php
-  }
-
-  ?>
+    TEST DOCUEMENT
+<h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+<br>
+<div style="display: flex; justify-content: center; align-items: center; height: 50%;">
+  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="image/<?= $docVideo['lien']?>" >
+</div>
+    <br>
+    <br>
+    <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
   <?php
+    } else if($docVideo['format']=='jpeg'){
+      ?>
+      TEST DOCUEMENT
+      <h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+      <br>
+     
+      <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
+  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="image/<?= $docVideo['lien']?>" >
+</div>
+<br>
+<br>
+<div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+      <?php
     }
+  }
     else
     {
         ?>
-         <iframe src="<?= $docVideo['lien'] ?>" width="500px" height="350px" frameborder="0"></iframe>
+       
+
+<h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+<br>
+<div style="display: flex; justify-content: center; align-items: center; height: 50%;">
+  <!-- <iframe src="<?= $docVideo['lien'] ?>" width="750px" height="450px" style="margin: 0 auto;" frameborder="0"></iframe> -->
+  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="<?= $docVideo['imgApercu']?>" >
+</div>
+
+         <br>
+         <br>
+         <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
 
         <?php
     }
     ?>
-   
-    <p><?= $docVideo['description'] ?></p>
     <?php }
     else{
     ?>
+ <?php
+    if($docVideo['type'] == 'document')
+    {
+      
+        if($docVideo['format']=='pdf')
+      {
+       ?>
+   
+       <h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+       <br>
+      
+       <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
+  <iframe style="width: 750px; height: 450px;" class="pdf" src="image/<?= $docVideo['lien']?>"></iframe>
+</div>  
+    <br>
+    <br>
+    <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+    <?php
+   }
+  else if ($docVideo['format']=='pptx')
+  {
+    ?>
 
+   <h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+   <br>
+   <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
+  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="image/<?= $docVideo['lien']?>" >
+</div>
+    <br>
+    <br>
+    <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+    <?php
+  }
+  else  if($docVideo['format']=='png'){
+    ?>
 
-<h3><?= $docVideo['libelle'] ?></h3>
-<iframe src="<?= $docVideo['lien'] ?>" width="500px" height="350px" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" aria-disabled="true" allowfullscreen></iframe>
-    <p><?= $docVideo['description'] ?></p>
+<h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+<br>
+<div style="display: flex; justify-content: center; align-items: center; height: 50%;">
+  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="image/<?= $docVideo['lien']?>" >
+</div>
+    <br>
+    <br>
+    <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+  <?php
+    } else if($docVideo['format']=='jpeg'){
+      ?>
+   
+      <h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+      <br>
+     
+      <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
+  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="image/<?= $docVideo['lien']?>" >
+</div>
+<br>
+<br>
+<div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+      <?php
+    }?>
+   <?php  }
+    else
+    {
+        ?>
 
+<h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+<br>
+<iframe src="<?= $docVideo['lien'] ?>" width="750px" height="450px" style="text-align:center; justify-item:center; align-item:center;" frameborder="0" allowfullscreen></iframe>
+<!-- <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="<?= $docVideo['imgApecu']?>" > -->
+         <br>
+         <br>
+         <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+
+        <?php
+    }
+    ?>
 <?php 
  }
  ?>
-
-
-
-
-
     <?php
     endforeach ?>
+       </div>
+
+       <br>
+       <br>
+       <br><br>
+       <br>
+       <?php
+       include('footer.php');
+       ?>
+
+
+
+
+
+
+<!-- <h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
+<br>
+
+<iframe src="<?= $docVideo['lien'] ?>" width="750px" height="450px" style="text-align:center; justify-item:center; align-item:center; margin-left: 25%;" frameborder="0" aria-disabled="true" allowfullscreen></iframe>
+<br>
+<br>
+<div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div> -->
+
+<!-- 
+<div class="text" style="margin-left: 40%;">
+    <p style="color: black;"> <?= htmlspecialchars_decode( $docVideo['description']) ?></p>
+    </div> -->

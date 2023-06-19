@@ -24,6 +24,12 @@ class ControleurMission
         $vue = new Vue("MissionAjouter");
         $vue->generer(array('missions'=>$missions));
     }
+    // public function BenevoleMissionAjouter($idMission)
+    // {
+    //     $mission =$this->mission->getMission($idMission);
+    //     $vue = new Vue("InscritBenevoleMission");
+    //     $vue->generer(array('mission'=>$mission));
+    // }
     public function ajouterBenevoleMission($idMission, $titre, $annonce, $adresse, $codePostal, $ville)
     {
         $this->mission->ajoutMission($idMission, $titre, $annonce, $adresse, $codePostal, $ville);

@@ -1,5 +1,9 @@
 
-
+<style>
+  h2{
+    color: black;
+  }
+</style>
 <!-- 
 <style>
   .modal {
@@ -99,15 +103,15 @@
 
   Modal content
   <div class="modal-content"> -->
-    <span class="close">&times;</span>
-    <?php foreach($dictionnaire as $dic): ?>
-       
-       <h2 ><?= $dic['libelle']; ?> </h2>
-       <img width="500" height="320" src="image/<?= $dic['img'];?> " >
-           <p><?= $dic['definition']; ?></p>
-          
-      
-       <?php endforeach;?>
+
+  <?php foreach($dictionnaire as $dic): ?>
+   <h2><?= $dic['libelle']; ?></h2>
+   <img class="img-top" src="<?= $dic['img']; ?>" style="max-width:50%; max-height: 200px; object-fit: scale-down;">
+   <br><br>
+   <div style="margin: auto; width: 80%;">
+       <p style="font-size:20px; margin-left:auto; margin-right:auto;"><?= $dic['definition']; ?></p>
+   </div>
+<?php endforeach;?>
   <!-- </div> -->
 
   <!-- <script>

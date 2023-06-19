@@ -13,19 +13,48 @@ class Dictionnaire extends Modele
 
     public function getDictionnaire($idDictionnaire)
     {
-        $sql = 'select libelle, definition, img, lettre, idDictionnaire from dictionnaire where idDictionnaire = ?';
+        $sql = 'select libelle, definition, img,  lettre, idDictionnaire from dictionnaire where idDictionnaire = ?';
         $dictionnaire = $this->executerRequete($sql, array($idDictionnaire));
         return $dictionnaire;
     }
+
+
     public function getRechercheDictionnaire($libelle)
     {
-        // $sql = "select libelle, description, lien from docVideo where type = 'video' and libelle like '".$libelle."%'";
-        // $docVideoRecherche = $this->executerRequete($sql);
-        // return $docVideoRecherche;
-        $sql = "select libelle, img, definition from dictionnaire where libelle like ?";
-        $dicRechercher = $this->executerRequete($sql, array($libelle.'%'));
+        if (strlen($libelle) >= 3) {
+            $sql = "SELECT libelle, img, lettre, idDictionnaire, definition FROM dictionnaire WHERE libelle LIKE ?";
+            $dicRechercher = $this->executerRequete($sql, array('%'.$libelle.'%'));
+            if ($dicRechercher->rowCount() == 0) {
+                $sql = "SELECT libelle, img, lettre, idDictionnaire, definition FROM dictionnaire WHERE definition LIKE ?";
+                $dicRechercher = $this->executerRequete($sql, array('%'.$libelle.'%'));
+                if ($dicRechercher->rowCount() == 0) {
+                    return "Il n'y a aucun résultat";
+                } else {
+                    echo 'Aucune recherche trouvée dans les libellés mais dans la définition';
+                }
+            }
+        } else {
+            $dicRechercher = false;
+            return 'Pas assez de caractères';
+        }
         return $dicRechercher;
     }
+    
+//   public function getRechercheDictionnaireSelect($libelle)
+//     {
+//         $sql = "select libelle, img, lettre, idDictionnaire, definition from dictionnaire where libelle like ?";
+//         $dicRechercher = $this->executerRequete($sql, array($libelle.'%'));
+//         return $dicRechercher;
+//     }
+    
+
+
+
+
+
+
+
+
     public function getDictionnaireLettreA()
     {
         $sql= "select * from dictionnaire where libelle like 'a%' ";

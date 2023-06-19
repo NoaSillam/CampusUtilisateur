@@ -32,4 +32,16 @@ class ControleurAccueil
         $vue = new Vue("PresDeChezVous");
         $vue->generer(array('accueil'=>$accueil));
     }
+    public function rechercherAccueilVideo()
+    {
+        $accueil = "";
+        $vue = new Vue("RechercherAccueilVideo");
+        $vue->generer(array('accueil'=>$accueil));
+    }
+    public function dictionnaireTest()
+    {
+        $accueil = "";
+        $vue =new Vue("DictionnaireTest");
+        $vue->generer(array('accueil'=>$accueil));
+    }
 }

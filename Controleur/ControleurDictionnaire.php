@@ -31,6 +31,7 @@ class ControleurDictionnaire
         $vue = new Vue("DictionnaireResultat");
         $vue->generer(array('dicRechercher'=>$dicRechercher));
     }
+   
     // public function dictionnaireLettre($lettre)
     // {
     //     $dictionnaire = $this->dictionnaire->getDictionnaireLettre($lettre);

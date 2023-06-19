@@ -27,3 +27,8 @@
 
     <input class="btn btn-primary container" style="margin-left: 25%;" type="submit" value="Valider">
 </form>
+
+
+<?php
+    include 'footer.php';
+    ?>

@@ -81,11 +81,6 @@ class Routeur
                 {
                     $this->ctrlFiltre->themeRechercher();
                 }
-                else if($_GET['action']== 'rechercherThemeVideo')
-                {
-                    $idTheme = intval($this->getParametre($_POST, 'idTheme'));
-                    $this->ctrlFiltreDocVideo->rechercherThemeVideo($idTheme);
-                }
                 else if($_GET['action']=='sousThm')
                 {
                     $idThemeParent =intval($this->getParametre($_POST, 'idThemeParent'));
@@ -98,6 +93,12 @@ class Routeur
 
                     }
                 }
+                else if($_GET['action']== 'rechercherThemeVideo')
+                {
+                    $idTheme = intval($this->getParametre($_POST, 'idTheme'));
+                    $this->ctrlFiltreDocVideo->rechercherThemeVideo($idTheme);
+                }
+                
 
                 else if($_GET['action'] == 'videoId')
                 {
@@ -133,6 +134,18 @@ class Routeur
 
                     }
                 }
+                else if($_GET['action']=='rechercherDocVideoSelect')
+                {
+                    $libelle = $this->getParametre($_POST, 'libelle');
+                    if(!empty($libelle))
+                    {
+                        $this->ctrlFiltreDocVideo->rechercherDocVideoSelect($libelle);
+                    }
+                    else{
+                        throw new Exception("identifiant de sous-theme non validée");
+
+                    }
+                }
                 else if($_GET['action']=='rechercherDictionnaire')
                 {
                     $libelle = $this->getParametre($_POST, 'libelle');
@@ -159,14 +172,195 @@ class Routeur
                    // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
                    // echo json_encode($animPartenaire);
                 }
-                else if($_GET['action'] == 'animPartenaire77')
+                else if($_GET['action'] == 'animPartenaire77News')
                 {
 
-                    $this->ctrlAnimationPartenaire->animPartenaire77();
-                    http_response_code(200);
+                    $this->ctrlAnimationPartenaire->animPartenaire77News();
+                    // http_response_code(200);
                    // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
                    // echo json_encode($animPartenaire);
                 }
+                else if($_GET['action'] == 'animPartenaire75News')
+                {
+
+                    $this->ctrlAnimationPartenaire->animPartenaire75News();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'animPartenaire78News')
+                {
+
+                    $this->ctrlAnimationPartenaire->animPartenaire78News();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                
+                else if($_GET['action'] == 'animPartenaire91News')
+                {
+
+                    $this->ctrlAnimationPartenaire->animPartenaire91News();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'animPartenaire92News')
+                {
+
+                    $this->ctrlAnimationPartenaire->animPartenaire92News();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'animPartenaire93News')
+                {
+
+                    $this->ctrlAnimationPartenaire->animPartenaire93News();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'animPartenaire94News')
+                {
+
+                    $this->ctrlAnimationPartenaire->animPartenaire94News();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'animPartenaire95News')
+                {
+
+                    $this->ctrlAnimationPartenaire->animPartenaire95News();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'animPartenaireNews')
+                {
+
+                    $this->ctrlAnimationPartenaire->animPartenaireNews();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'animPartenaire75')
+                {
+                    $this->ctrlAnimationPartenaire->animPartenaire75();
+                    http_response_code(200);
+                }
+                else if($_GET['action'] == 'animPartenaire77')
+                {
+                    $this->ctrlAnimationPartenaire->animPartenaire77();
+                    http_response_code(200);
+                }
+                else if($_GET['action'] == 'animPartenaire78')
+                {
+                    $this->ctrlAnimationPartenaire->animPartenaire78();
+                    http_response_code(200);
+                }
+                else if($_GET['action'] == 'animPartenaire91')
+                {
+                    $this->ctrlAnimationPartenaire->animPartenaire91();
+                    http_response_code(200);
+                }
+                else if($_GET['action'] == 'animPartenaire92')
+                {
+                    $this->ctrlAnimationPartenaire->animPartenaire92();
+                    http_response_code(200);
+                }
+                else if($_GET['action'] == 'animPartenaire93')
+                {
+                    $this->ctrlAnimationPartenaire->animPartenaire93();
+                    http_response_code(200);
+                }
+                else if($_GET['action'] == 'animPartenaire94')
+                {
+                    $this->ctrlAnimationPartenaire->animPartenaire94();
+                    http_response_code(200);
+                }
+                else if($_GET['action'] == 'animPartenaire95')
+                {
+                    $this->ctrlAnimationPartenaire->animPartenaire95();
+                    http_response_code(200);
+                }
+                else if($_GET['action'] == 'animPartenaire92News')
+                {
+
+                    $this->ctrlAnimationPartenaire->animPartenaire92News();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'prestataire75')
+                {
+
+                    $this->ctrlAnimationPartenaire->prestataire75();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'prestataire77')
+                {
+
+                    $this->ctrlAnimationPartenaire->prestataire77();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'prestataire78')
+                {
+
+                    $this->ctrlAnimationPartenaire->prestataire78();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+              else if($_GET['action'] == 'prestataire91')
+                {
+
+                    $this->ctrlAnimationPartenaire->prestataire91();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'prestataire92')
+                {
+
+                    $this->ctrlAnimationPartenaire->prestataire92();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'prestataire93')
+                {
+
+                    $this->ctrlAnimationPartenaire->prestataire93();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+                else if($_GET['action'] == 'prestataire94')
+                {
+
+                    $this->ctrlAnimationPartenaire->prestataire94();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+
+                else if($_GET['action'] == 'prestataire95')
+                {
+
+                    $this->ctrlAnimationPartenaire->prestataire95();
+                    // http_response_code(200);
+                   // echo json_encode($this->ctrlAnimationPartenaire->animPartenaire());
+                   // echo json_encode($animPartenaire);
+                }
+
+
+
                 // else if($_GET['action']=='animation')
                 // {
                 //   $this->ctrlAnimationPartenaire->animation();
@@ -224,17 +418,18 @@ class Routeur
                 }
                 else if ($_GET['action']== 'ajoutDonateur')
                 {
-                    $idInscrit = $this->getParametre($_POST, 'id');
+                    // $idInscrit = $this->getParametre($_POST, 'id');
                     $nom = $this->getParametre($_POST, 'nom');
                     $prenom = $this->getParametre($_POST, 'prenom');
                     $mail = $this->getParametre($_POST, 'mail');
                     $numTelephone = $this->getParametre($_POST, 'numTelephone');
                     $adresse = $this->getParametre($_POST, 'adresse');
                     $codePostal = $this->getParametre($_POST, 'codePostal');
+                    $ville = $this->getParametre($_POST, 'ville');
                     $montant = $this->getParametre($_POST, 'montant');
                     $anneeNaissance = $this->getParametre($_POST, 'anneeNaissance');
                     $civilite = $this->getParametre($_POST, 'civilite');
-                    $this->ctrlInscrit->ajoutDonateur($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $montant, $anneeNaissance, $civilite);
+                    $this->ctrlInscrit->ajoutDonateur( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $montant, $anneeNaissance, $civilite);
 
 
                 }
@@ -244,24 +439,58 @@ class Routeur
                 }
                 else if($_GET['action'] == 'listeBenevoleMission')
                 {
-                    $this->ctrlInscrit->listeBenevoleMission();
+                    $idMission = intval($this->getParametre($_GET, 'idMission'));
+                    if( $idMission !=0)
+                    {
+                        $this->ctrlInscrit->listeBenevoleMission($idMission);
+                    }
+                    else{
+                        throw new Exception("identifiant du salarie non valide");
+                    }
+                    
                 }
+                // else if($_GET['action']=='BenevoleMissionAjouter')
+                // {
+                //    // $idPrestataire = intval($this->getParametre($_GET, 'id'));
+                //     $idMission = intval($this->getParametre($_GET, 'idMission'));
+                //     if( $idMission !=0)
+                //     {
+                //         $this->ctrlMission->BenevoleMissionAjouter( $idMission);
+                //     }
+                //     else{
+                //         throw new Exception("identifiant du theme non valide");
+                //     }
+                // }
                 else if ($_GET['action']== 'ajoutBenevole')
                 {
-                    $idInscrit = $this->getParametre($_POST, 'id');
+                    // $idInscrit = $this->getParametre($_POST, 'id');
                     $nom = $this->getParametre($_POST, 'nom');
                     $prenom = $this->getParametre($_POST, 'prenom');
                     $mail = $this->getParametre($_POST, 'mail');
                     $numTelephone = $this->getParametre($_POST, 'numTelephone');
                     $adresse = $this->getParametre($_POST, 'adresse');
                     $codePostal = $this->getParametre($_POST, 'codePostal');
+                    $ville = $this->getParametre($_POST, 'ville');
                     $anneeNaissance = $this->getParametre($_POST, 'anneeNaissance');
                     $civilite = $this->getParametre($_POST, 'civilite');
-                    $this->ctrlInscrit->ajoutBenevole($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $anneeNaissance, $civilite);
+                    $this->ctrlInscrit->ajoutBenevole( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite);
                 }
+                // else if ($_GET['action']== 'ajoutBenevole')
+                // {
+                //     // $idInscrit = $this->getParametre($_POST, 'id');
+                //     $nom = $this->getParametre($_POST, 'nom');
+                //     $prenom = $this->getParametre($_POST, 'prenom');
+                //     $mail = $this->getParametre($_POST, 'mail');
+                //     $numTelephone = $this->getParametre($_POST, 'numTelephone');
+                //     $adresse = $this->getParametre($_POST, 'adresse');
+                //     $codePostal = $this->getParametre($_POST, 'codePostal');
+                //     $anneeNaissance = $this->getParametre($_POST, 'anneeNaissance');
+                //     $civilite = $this->getParametre($_POST, 'civilite');
+                //     $this->ctrlInscrit->ajoutBenevole( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $anneeNaissance, $civilite);
+                // }
                 else if ($_GET['action']== 'ajoutBenevoleMission')
                 {
-                    $idInscrit = $this->getParametre($_POST, 'id');
+                    // $idInscrit = $this->getParametre($_POST, 'id');
                     $nom = $this->getParametre($_POST, 'nom');
                     $prenom = $this->getParametre($_POST, 'prenom');
                     $mail = $this->getParametre($_POST, 'mail');
@@ -273,7 +502,7 @@ class Routeur
                     $civilite = $this->getParametre($_POST, 'civilite');
                     $commentaire = $this->getParametre($_POST, 'commentaire');
                     $idMission = $this->getParametre($_POST, 'idMission');
-                    $this->ctrlInscrit->ajoutBenevoleMission($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite, $commentaire, $idMission);
+                  $this->ctrlInscrit->ajoutBenevoleMission( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite, $commentaire, $idMission);
                 }
                 else if($_GET['action'] == 'listeNewsletters')
                 {
@@ -281,16 +510,17 @@ class Routeur
                 }
                 else if ($_GET['action']== 'ajoutNewsletters')
                 {
-                    $idInscrit = $this->getParametre($_POST, 'id');
+                    // $idInscrit = $this->getParametre($_POST, 'id');
                     $nom = $this->getParametre($_POST, 'nom');
                     $prenom = $this->getParametre($_POST, 'prenom');
                     $mail = $this->getParametre($_POST, 'mail');
                     $numTelephone = $this->getParametre($_POST, 'numTelephone');
                     $adresse = $this->getParametre($_POST, 'adresse');
                     $codePostal = $this->getParametre($_POST, 'codePostal');
+                    $ville = $this->getParametre($_POST, 'ville');
                     $anneeNaissance = $this->getParametre($_POST, 'anneeNaissance');
                     $civilite = $this->getParametre($_POST, 'civilite');
-                    $this->ctrlInscrit->ajoutNewsletters($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $anneeNaissance, $civilite);
+                    $this->ctrlInscrit->ajoutNewsletters( $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite);
                 }
                 else if($_GET['action'] == 'listePreventions')
                 {
@@ -514,6 +744,10 @@ class Routeur
                 {
                     $this->ctrlAccueil->accueil();
                 }
+                else if($_GET['action'] == 'rechercherAccueilVideo')
+                {
+                    $this->ctrlAccueil->rechercherAccueilVideo();
+                }
                 else if($_GET['action'] == 'presDeChezVous')
                 {
                     $this->ctrlAccueil->presDeChezVous();
@@ -530,6 +764,14 @@ class Routeur
                 {
                     $this->ctrlFiltreDocVideo->documentheque();
                 }
+                else if($_GET['action']=='dictionnaireTest')
+                {
+                    $this->ctrlAccueil->dictionnaireTest();
+                }
+                // else if($_GET['action'] == 'videotheque2')
+                // {
+                //     $this->ctrlFiltreDocVideo->videotheque2();
+                // }
                 else
                 {
                      throw new Exception("action non valide");

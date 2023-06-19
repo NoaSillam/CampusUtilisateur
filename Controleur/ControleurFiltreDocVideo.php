@@ -62,6 +62,13 @@ class ControleurFiltreDocVideo
         $docVideoRecherche = $this->docVideo->getRechercheDocVideo($libelle);
         $vue = new Vue("VideoResultat");
         $vue->generer(array('docVideoRecherche'=>$docVideoRecherche));
+    
+    }
+    public function rechercherDocVideoSelect($libelle)
+    {
+        $resultats = $this->docVideo->getRechercheDocVideoSelect($libelle);
+        $vue = new Vue("VideoResultatSelect");
+        $vue->generer(array('resultats'=>$resultats));
     }
     public function calendrier()
     {
@@ -75,6 +82,32 @@ class ControleurFiltreDocVideo
         $vue = new Vue("VideoThemesDate");
         $vue->generer(array('vids'=>$vids));
     }
+    // public function videotheque2()
+    // {
+    //     $videosPerPage = 10; // Nombre de vidéos à afficher par page
+    //     $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1; // Page courante
+        
+    //     // Calcul des limites pour la requête SQL
+    //     $limit = $videosPerPage;
+    //     $offset = ($currentPage - 1) * $videosPerPage;
+        
+    //     // Récupération de la liste des vidéos
+    //     $videotheque = $this->docVideo->getVideotheque1($limit, $offset);
+        
+    //     // Pagination
+    //     $totalPages = ceil($videotheque[1] / $videosPerPage);
+    //     $start = ($currentPage - 1) * $videosPerPage;
+    //     $end = $start + $videosPerPage;
+    //     $videotheque = array_slice($videotheque[0], $start, $videosPerPage);
+    
+    //     // Affichage de la vue
+    //     $vue = new Vue("Videotheque2");
+    //     $vue->generer(array(
+    //         'videotheque' => $videotheque,
+    //         'currentPage' => $currentPage,
+    //         'totalPages' => $totalPages
+    //     ));
+    // }
     public function videotheque()
     {
         $videotheque = $this->docVideo->getVideotheque();
@@ -93,12 +126,18 @@ class ControleurFiltreDocVideo
         $vue = new Vue("VideoThemesDirect");
         $vue->generer(array('directs'=>$directs));
     }
+    // public function rechercherThemeVideo($idTheme)
+    // {
+    //     $themeRecherche = $this->docVideo->getThemeVideoRecherche($idTheme);
+    //     $vue = new Vue("ThemeVideoRechercher");
+    //     $vue->generer(array('themeRecherche'=>$themeRecherche));
+    // }
     public function rechercherThemeVideo($idTheme)
-    {
-        $themeRecherche = $this->docVideo->getThemeVideoRecherche($idTheme);
-        $vue = new Vue("ThemeVideoRechercher");
-        $vue->generer(array('themeRecherche'=>$themeRecherche));
-    }
+{
+    $themeRecherche = $this->docVideo->getThemeVideoRecherche($idTheme);
+    $vue = new Vue("ThemeVideoRechercher");
+    $vue->generer(array('themeRecherche' => $themeRecherche));
+}
     public function videoId($idDocVideo)
     {
         $docVideoId = $this->docVideo->getVideoId($idDocVideo);
