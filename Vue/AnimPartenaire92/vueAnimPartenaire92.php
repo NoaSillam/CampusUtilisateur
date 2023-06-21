@@ -375,6 +375,14 @@ include_once('header2.php');
                            
                            <?php $image = '<img width="50%" class="img-top" src="'.$anim['img'].'" />';?>
                            <?php $titre = '<h1 style="font-size: 20px;"><b>'.$anim['nom'].'</b></h1>';?>
+                           <?php
+                             if($anim['lienPdf'] != null)
+                             {
+                               $pdf = '</br><p> <a href ="'.$anim['lienPdf'].'" target="_blank" >En savoir plus</a></p>';
+                             }else{
+                               $pdf = "";
+                             }
+                             ?>
                         <?php echo "
                         var myIcon = L.icon({
                            iconUrl: 'image/92Departement3.png',
@@ -386,7 +394,7 @@ include_once('header2.php');
                    //    var popper = Popper.createPopper(vue,document.getElementById('pop-up'), {
                    //     placement: 'right-start',
                    //     });
-                   var content3 = '";?> <?= $titre.$image.$description ?> <?php echo "';
+                   var content3 = '";?> <?= $titre.$image.$description.$pdf ?> <?php echo "';
                    var myPopup = L.popup({
                     maxWidth: 600, 
                     maxHeight: 600, 

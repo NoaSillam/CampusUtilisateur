@@ -22,6 +22,12 @@
   opacity: 0.5;
   pointer-events: none;
 }
+img{
+    object-fit: scale-down;
+    max-width: 100%;
+  max-height: 200px; /* Remplacez par la hauteur maximale souhaitée */
+  height: auto;
+  }
 </style>
 <?php 
 //include_once('header1.php'); 
@@ -47,16 +53,17 @@ foreach($docVideoRecherche as $docvidResultat):
       if($docvidResultat['type']=='video')
       {
         ?>
-          <div class="video-responsive">
+          <!-- <div class="video-responsive">
     <iframe width="320" height="320" src="<?= $docvidResultat['lien']?>" title="YouTube video player" 
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
         picture-in-picture" class="card-img-top"  allowfullscreen></iframe> 
-        </div>
+        </div> -->
+        <img src="<?= $docvidResultat['imgApercu'] ?>" class="img-top" alt="">
         <?php 
       }
       else{
         ?>
-        <img width="385" height="220" src="image/<?= $docvidResultat['lien'] ?>" class="img-top" alt="">
+        <img src="<?= $docvidResultat['imgApercu'] ?>" class="img-top" alt="">
         <?php
       }
       ?>
@@ -79,12 +86,12 @@ foreach($docVideoRecherche as $docvidResultat):
     ?>
     <div class="col">
     <div class="card h-100">
-    <div class="video-responsive">
+    <!-- <div class="video-responsive">
       <iframe width="320" height="320" src="<?= $docvidResultat['lien']?>" title="YouTube video player" 
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
         picture-in-picture" class="card-img-top" aria-disabled="true" allowfullscreen></iframe> 
-        </div>
-      
+        </div> -->
+        <img src="<?= $docvidResultat['imgApercu'] ?>" class="img-top" alt="">
       <div class="card-body">
         
       <h5 class="card-title"><?= $docvidResultat['libelle'] ?></h5>

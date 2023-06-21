@@ -71,10 +71,10 @@ class DocVideo extends Modele
     public function getRechercheDocVideo($libelle)
     {
         if (strlen($libelle) >= 3) {
-            $sql = "SELECT libelle, type, description, lien, idDocVideo, TIMEDIFF(docVideo.dateParution, NOW()) AS crono FROM docVideo WHERE libelle LIKE ?";
+            $sql = "SELECT libelle, type, description, imgApercu, lien, idDocVideo, TIMEDIFF(docVideo.dateParution, NOW()) AS crono FROM docVideo WHERE libelle LIKE ?";
             $docVideoRecherche = $this->executerRequete($sql, array('%'.$libelle.'%'));
             if ($docVideoRecherche->rowCount() == 0) {
-                $sql = "SELECT libelle, type, description, lien, idDocVideo, TIMEDIFF(docVideo.dateParution, NOW()) AS crono FROM docVideo WHERE description LIKE ?";
+                $sql = "SELECT libelle, type, description, imgApercu, lien, idDocVideo, TIMEDIFF(docVideo.dateParution, NOW()) AS crono FROM docVideo WHERE description LIKE ?";
                 $docVideoRecherche = $this->executerRequete($sql, array('%'.$libelle.'%'));
             }
         } else {
@@ -85,10 +85,10 @@ class DocVideo extends Modele
     public function getRechercheDocVideoSelect($libelle)
 {
     if (strlen($libelle) >= 3) {
-        $sql = "SELECT libelle, type, description, lien, idDocVideo, TIMEDIFF(docVideo.dateParution, NOW()) AS crono FROM docVideo WHERE libelle LIKE ?";
+        $sql = "SELECT libelle, type, description, imgApercu, lien, idDocVideo, TIMEDIFF(docVideo.dateParution, NOW()) AS crono FROM docVideo WHERE libelle LIKE ?";
         $docVideoRecherche = $this->executerRequete($sql, array('%'.$libelle.'%'));
         if ($docVideoRecherche->rowCount() == 0) {
-            $sql = "SELECT libelle, type, description, lien, idDocVideo, TIMEDIFF(docVideo.dateParution, NOW()) AS crono FROM docVideo WHERE description LIKE ?";
+            $sql = "SELECT libelle, type, description, imgApercu, lien, idDocVideo, TIMEDIFF(docVideo.dateParution, NOW()) AS crono FROM docVideo WHERE description LIKE ?";
             $docVideoRecherche = $this->executerRequete($sql, array('%'.$libelle.'%'));
             $resultats = $docVideoRecherche->fetchAll(PDO::FETCH_ASSOC);
             return $resultats;

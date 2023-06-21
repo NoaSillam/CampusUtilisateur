@@ -67,7 +67,7 @@ class Inscrit extends Modele
         $sql = 'insert into inscrit(id, nom, prenom, mail, numTelephone, adresse, codePostal, ville, anneeNaissance, civilite, dateInscription) values(?,?,?,?,?,?,?,?,?,?, CURRENT_DATE())';
         $sql1 = 'insert into inscritStatut(idInscrit, idStatut) values(?, 1)';
         $nbInscrits = $this->getNombreInscrits();
-        $idInscrit = 301 + $nbInscrits ;
+        $idInscrit = $nbInscrits + 1 ;
         $this->executerRequete($sql, array($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite));
         $this->executerRequete($sql1, array($idInscrit));
     }
@@ -80,7 +80,7 @@ class Inscrit extends Modele
 //     $this->executerRequete($sql1, array($idInscrit));
 // }
 public function getNombreInscrits() {
-    $sql = 'select count(*) as nbInscrits from inscrit ';
+    $sql = 'select max(id) as nbInscrits from inscrit ';
     $resultat = $this->executerRequete($sql);
      $nbInscrits = $resultat->fetch(PDO::FETCH_ASSOC)['nbInscrits'];
      return $nbInscrits;
@@ -91,7 +91,7 @@ public function getNombreInscrits() {
         $sql = 'insert into inscrit(id, nom, prenom, mail, numTelephone, adresse, codePostal, ville, anneeNaissance, civilite, commentaire, dateInscription) values(?,?,?,?,?,?,?,?,?,? ,?, CURRENT_DATE())';
         $sql1 = 'insert into inscritStatut(idStatut, idInscrit, idMission) values( 1, ?, ?)';
         $nbInscrits = $this->getNombreInscrits();
-        $idInscrit = 301 + $nbInscrits ;
+        $idInscrit = $nbInscrits + 1;
         $this->executerRequete($sql, array($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite, $commentaire));
         $this->executerRequete($sql1, array($idInscrit, $idMission));
     }
@@ -100,7 +100,7 @@ public function getNombreInscrits() {
         $sql = 'insert into inscrit(id, nom, prenom, mail, numTelephone, adresse, codePostal, ville, montant,anneeNaissance,civilite,dateInscription) values(?,?,?,?,?,?,?,?,?,?,?, CURRENT_DATE())';
        $sql1 = 'insert into inscritStatut(idInscrit, idStatut) values(?, 2)';
        $nbInscrits = $this->getNombreInscrits();
-        $idInscrit = 301 + $nbInscrits ;
+        $idInscrit = $nbInscrits + 1;
         $this->executerRequete($sql, array($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $montant, $anneeNaissance, $civilite));
         $this->executerRequete($sql1, array($idInscrit));
     }
@@ -110,7 +110,7 @@ public function getNombreInscrits() {
         $sql = 'insert into inscrit(id, nom, prenom, mail, numTelephone, adresse, codePostal, ville, anneeNaissance, civilite, dateInscription) values(?,?,?,?,?,?,?,?,?,?, CURRENT_DATE())';
         $sql1 = 'insert into inscritStatut(idInscrit, idStatut) values(?, 3)';
         $nbInscrits = $this->getNombreInscrits();
-        $idInscrit = 301 + $nbInscrits ;
+        $idInscrit = $nbInscrits + 1;
         $this->executerRequete($sql, array($idInscrit, $nom, $prenom, $mail, $numTelephone, $adresse, $codePostal, $ville, $anneeNaissance, $civilite));
         $this->executerRequete($sql1, array($idInscrit));
     }

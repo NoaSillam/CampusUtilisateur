@@ -133,11 +133,9 @@ foreach($docVideoId as $docVideo):
        <br>
       
        <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
-  <iframe style="width: 750px; height: 450px;" class="pdf" src="image/<?= $docVideo['lien']?>"></iframe>
+        <iframe style="width: 100%;" height="650px" class="pdf" src="<?= $docVideo['lien']?>"></iframe>
 </div>  
-    <br>
-    <br>
-    <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+  
     <?php
    }
   else if ($docVideo['format']=='pptx')
@@ -147,11 +145,9 @@ foreach($docVideoId as $docVideo):
    <h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
    <br>
    <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
-  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="image/<?= $docVideo['lien']?>" >
+  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="<?= $docVideo['lien']?>" >
 </div>
-    <br>
-    <br>
-    <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+
     <?php
   }
   else  if($docVideo['format']=='png'){
@@ -160,11 +156,9 @@ foreach($docVideoId as $docVideo):
 <h3 style="color: black; text-align:center;"><?= $docVideo['libelle'] ?></h3>
 <br>
 <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
-  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="image/<?= $docVideo['lien']?>" >
+  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="<?= $docVideo['lien']?>" >
 </div>
-    <br>
-    <br>
-    <div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
+
   <?php
     } else if($docVideo['format']=='jpeg'){
       ?>
@@ -173,11 +167,8 @@ foreach($docVideoId as $docVideo):
       <br>
      
       <div style="display: flex; justify-content: center; align-items: center; height: 50%;">
-  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="image/<?= $docVideo['lien']?>" >
+  <img class="img-fluid image" width="750px" height="450px" style="margin: 0 auto;" src="<?= $docVideo['lien']?>" >
 </div>
-<br>
-<br>
-<div style="color: black; width:80%; margin-left:auto; margin-right:auto;" ><?= htmlspecialchars_decode( $docVideo['description']) ?></div>
       <?php
     }?>
    <?php  }

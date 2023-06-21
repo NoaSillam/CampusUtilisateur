@@ -875,7 +875,7 @@ header .logo img {
 <header>
         <div class="logo">
             <!-- <a href="index.php" target="_blank"><img src="/logo_delta_7.2901a2cf.png" srcset="image/logo_delta_7@2x.89b371fd.png 1200w" width="180" height="auto" alt="Revenir à l'accueil"></a> -->
-            <a href="index.php" target="_blank"><img src="image/Logo-Delta7-Campus2.png" srcset="image/Logo-Delta7-Campus2@2x.png 1200w" width="180" height="auto" alt="Revenir à l'accueil"></a>
+            <a href="index.php"><img src="image/Logo-Delta7-Campus2.png" srcset="image/Logo-Delta7-Campus2@2x.png 1200w" width="180" height="auto" alt="Revenir à l'accueil"></a>
         </div>
     <nav id="main-nav">
         <div class="indicators">

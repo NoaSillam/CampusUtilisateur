@@ -73,7 +73,7 @@ class AnimationPartenaire extends Modele
     }
     public function apiAnimation77()
     {
-        $sql = 'select idAnimPartenaire, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "77%"';
+        $sql = 'select idAnimPartenaire, lienPdf, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "77%"';
         $animPartenaire = $this->executerRequete($sql);
         if($animPartenaire)
         {
@@ -88,7 +88,7 @@ class AnimationPartenaire extends Modele
     }
     public function apiAnimation91()
     {
-        $sql = 'select idAnimPartenaire, img,  nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "91%"';
+        $sql = 'select idAnimPartenaire, lienPdf, img,  nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "91%"';
         $animPartenaire = $this->executerRequete($sql);
         if($animPartenaire)
         {
@@ -102,7 +102,7 @@ class AnimationPartenaire extends Modele
     }
     public function apiAnimation92()
     {
-        $sql = 'select idAnimPartenaire, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "92%"';
+        $sql = 'select idAnimPartenaire, lienPdf, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "92%"';
         $animPartenaire = $this->executerRequete($sql);
         if($animPartenaire)
         {
@@ -116,7 +116,7 @@ class AnimationPartenaire extends Modele
     }
     public function apiAnimation78()
     {
-        $sql = 'select idAnimPartenaire, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "78%"';
+        $sql = 'select idAnimPartenaire, lienPdf, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "78%"';
         $animPartenaire = $this->executerRequete($sql);
         if($animPartenaire)
         {
@@ -130,7 +130,7 @@ class AnimationPartenaire extends Modele
     }
     public function apiAnimation75()
     {
-        $sql = 'select idAnimPartenaire, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "75%"';
+        $sql = 'select idAnimPartenaire, lienPdf, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "75%"';
         $animPartenaire = $this->executerRequete($sql);
         if($animPartenaire)
         {
@@ -144,7 +144,7 @@ class AnimationPartenaire extends Modele
     }
     public function apiAnimation93()
     {
-        $sql = 'select idAnimPartenaire, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "93%"';
+        $sql = 'select idAnimPartenaire, lienPdf, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "93%"';
         $animPartenaire = $this->executerRequete($sql);
         if($animPartenaire)
         {
@@ -158,7 +158,7 @@ class AnimationPartenaire extends Modele
     }
     public function apiAnimation94()
     {
-        $sql = 'select idAnimPartenaire, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "94%"';
+        $sql = 'select idAnimPartenaire, lienPdf, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "94%"';
         $animPartenaire = $this->executerRequete($sql);
         if($animPartenaire)
         {
@@ -172,7 +172,7 @@ class AnimationPartenaire extends Modele
     }
     public function apiAnimation95()
     {
-        $sql = 'select idAnimPartenaire, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "95%"';
+        $sql = 'select idAnimPartenaire, lienPdf, img, nom, descriptif, latitude, longitude from animationPartenaire where latitude is not null and longitude is not null and codePostalAnim like "95%"';
         $animPartenaire = $this->executerRequete($sql);
         if($animPartenaire)
         {
